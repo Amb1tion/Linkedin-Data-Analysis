@@ -1,0 +1,6 @@
+/.ignore
+/config.ini
+/data.csv
+/graph
+/tests
+/__pycache__

@@ -12,12 +12,6 @@ def main():
     for page in range(1, num_pages + 1):
         #call navigate_jobs with the current page number
         interface.navigate_job_page(page)
-        ul = interface.driver.find_element(By.XPATH,
-    "//div[@class='data-results-list-top-scroll-sentinel']/following-sibling::ul[1]"
-)
-        job_list = ul.find_elements(By.TAG_NAME, "li")
-        job_ids = [job_list.get_attribute("data-job-id") for id in job_list]
-        print(job_ids)
         #todo:function that iterates over each job on the page and scrapes individual job descriptions   
         html = interface.scrape_page()
         data = parser.parse_page_html(html)
